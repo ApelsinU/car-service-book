@@ -1,0 +1,46 @@
+.toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 16px;
+
+  @media (max-width: 720px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.strong {
+  font-weight: 600;
+}
+
+.muted {
+  color: var(--text);
+  font-size: 13px;
+}
+
+.note {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.parts-tag {
+  margin-left: 8px;
+}
+
+.parts-row td {
+  background: var(--code-bg);
+}
+
+.table-parts {
+  font-size: 13px;
+}
+
+.parts-total {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--text);
+}
