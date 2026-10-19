@@ -31,24 +31,26 @@ export default function Layout() {
   return (
     <div className="shell" ref={root}>
       <header className="shell-header">
-        <span className="brand">Car Service Book</span>
-        <nav className="nav">
-          {LINKS.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              end={link.end}
-              className={({ isActive }) => (isActive ? 'nav-link is-active' : 'nav-link')}
-            >
-              {link.label}
-            </NavLink>
-          ))}
-        </nav>
-        <div className="shell-user">
-          <span className="user">{currentUser?.login}</span>
-          <button className="btn btn-sm" type="button" onClick={logout}>
-            Выйти
-          </button>
+        <div className="shell-header-inner">
+          <span className="brand">Car Service Book</span>
+          <nav className="nav">
+            {LINKS.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                end={link.end}
+                className={({ isActive }) => (isActive ? 'nav-link is-active' : 'nav-link')}
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </nav>
+          <div className="shell-user">
+            <span className="user">{currentUser?.login}</span>
+            <button className="btn btn-sm" type="button" onClick={logout}>
+              Выйти
+            </button>
+          </div>
         </div>
       </header>
 

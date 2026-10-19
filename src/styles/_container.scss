@@ -1,0 +1,13 @@
+$container-width: 1120px;
+$container-gutter: 20px;
+
+@mixin container($block: null) {
+  width: 100%;
+  max-width: $container-width;
+  margin-inline: auto;
+  padding-inline: $container-gutter;
+
+  @if $block {
+    padding-block: $block;
+  }
+}

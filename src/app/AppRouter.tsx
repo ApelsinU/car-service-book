@@ -26,23 +26,26 @@ function RedirectIfAuthed() {
   return <LoginPage />
 }
 
-const router = createBrowserRouter([
-  { path: '/login', element: <RedirectIfAuthed /> },
-  {
-    element: (
-      <RequireAuth>
-        <Layout />
-      </RequireAuth>
-    ),
-    children: [
-      { path: '/', element: <CarsPage /> },
-      { path: '/journal', element: <JournalPage /> },
-      { path: '/stats', element: <StatsPage /> },
-      { path: '/new', element: <NewEntryPage /> },
-    ],
-  },
-  { path: '*', element: <Navigate to="/" replace /> },
-])
+const router = createBrowserRouter(
+  [
+    { path: '/login', element: <RedirectIfAuthed /> },
+    {
+      element: (
+        <RequireAuth>
+          <Layout />
+        </RequireAuth>
+      ),
+      children: [
+        { path: '/', element: <CarsPage /> },
+        { path: '/journal', element: <JournalPage /> },
+        { path: '/stats', element: <StatsPage /> },
+        { path: '/new', element: <NewEntryPage /> },
+      ],
+    },
+    { path: '*', element: <Navigate to="/" replace /> },
+  ],
+  { basename: import.meta.env.BASE_URL.replace(/\/+$/, '') },
+)
 
 export default function App() {
   return <RouterProvider router={router} />
